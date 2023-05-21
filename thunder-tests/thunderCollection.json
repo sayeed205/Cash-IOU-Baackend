@@ -1,0 +1,31 @@
+[
+  {
+    "_id": "72da743f-0e69-4866-bd34-1cba363db2fe",
+    "colName": "Cash-IOU",
+    "created": "2023-05-11T08:09:46.522Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "d51c1b96-b4d6-406b-bf7b-dda0d30f19df",
+        "name": "Auth",
+        "containerId": "",
+        "created": "2023-05-11T08:10:02.667Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "8f8f699b-44b0-4997-adbc-a5a673ed9648",
+        "name": "Transactions",
+        "containerId": "",
+        "created": "2023-05-11T08:10:11.441Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "56b704b7-a33b-4d7b-adf3-f86adb44a808",
+        "name": "Transaction rooms",
+        "containerId": "",
+        "created": "2023-05-14T10:19:30.344Z",
+        "sortNum": 30000
+      }
+    ]
+  }
+]
