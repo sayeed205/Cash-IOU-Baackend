@@ -1,6 +1,5 @@
 {
     "name": "cash-iou-backend",
-    "packageManager": "yarn@3.5.0",
     "description": "Backend for Cash-IOU web app",
     "version": "0.2.0",
     "main": "index.js",
