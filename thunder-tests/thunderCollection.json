@@ -26,6 +26,33 @@
         "created": "2023-05-14T10:19:30.344Z",
         "sortNum": 30000
       }
-    ]
+    ],
+    "settings": {
+      "options": {
+        "baseUrl": "http://localhost:5000"
+      },
+      "envId": "e3ea7689-d386-4fde-bb52-bebddaed16e5"
+    }
+  },
+  {
+    "_id": "c5c1f295-eebf-4390-8018-bbd9f1cc1e75",
+    "colName": "Cash-IOU-Production",
+    "created": "2023-05-29T03:36:24.398Z",
+    "sortNum": 20000,
+    "folders": [
+      {
+        "_id": "7c55d5a7-c446-4c87-aea1-dc86d83469bd",
+        "name": "Authentication",
+        "containerId": "",
+        "created": "2023-05-29T03:36:37.767Z",
+        "sortNum": 10000
+      }
+    ],
+    "settings": {
+      "options": {
+        "baseUrl": "https://cash-iou.adaptable.app"
+      },
+      "envId": "177001a4-6703-4739-b8eb-549602993e77"
+    }
   }
 ]

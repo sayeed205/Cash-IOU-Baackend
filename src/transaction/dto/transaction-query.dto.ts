@@ -1,18 +1,21 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform } from 'class-transformer';
 import { IsInt, IsNotEmpty, IsString } from 'class-validator';
+
 import { Types } from 'mongoose';
-import { IsValidMongoId } from '../../common/decorators';
+import { IsValidMongoId } from 'src/common/decorators';
 
 export class TransactionQueryDto {
     @IsNotEmpty()
-    @IsValidMongoId()
-    @Transform(({ value }) => new Types.ObjectId(value))
+    @Transform(({ value }) => new Types.ObjectId(value), {
+        groups: ['transform'],
+    })
     @ApiProperty({
         description: 'MongoId of the transaction room',
         example: '5f9d2f8b9d6b1e1f3c9b1b1b',
         required: true,
     })
+    @IsValidMongoId()
     roomId: string;
 
     @Transform(({ value }) => parseInt(value))

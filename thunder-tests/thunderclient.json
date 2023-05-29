@@ -4,11 +4,11 @@
     "colId": "72da743f-0e69-4866-bd34-1cba363db2fe",
     "containerId": "8f8f699b-44b0-4997-adbc-a5a673ed9648",
     "name": "Get all transactions",
-    "url": "{{URL}}/api/transactions?roomId=6460b71dd930d70d3b6d3e3f&page=2",
+    "url": "/api/transactions?roomId=6460b71dd930d70d3b6d3e3f&page=2",
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-05-11T08:10:31.609Z",
-    "modified": "2023-05-15T02:24:34.736Z",
+    "modified": "2023-05-29T04:53:44.595Z",
     "headers": [],
     "params": [
       {
@@ -24,7 +24,7 @@
     ],
     "auth": {
       "type": "bearer",
-      "bearer": "{{alt_token}}"
+      "bearer": "{{token}}"
     },
     "tests": []
   },
@@ -60,9 +60,13 @@
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-05-11T08:25:41.668Z",
-    "modified": "2023-05-14T17:42:49.189Z",
+    "modified": "2023-05-27T03:04:45.168Z",
     "headers": [],
     "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{alt_token}}"
+    },
     "tests": []
   },
   {
@@ -86,12 +90,12 @@
     "method": "POST",
     "sortNum": 60000,
     "created": "2023-05-12T10:20:49.185Z",
-    "modified": "2023-05-21T05:45:58.267Z",
+    "modified": "2023-05-27T02:01:45.761Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"Rahul Mukharjee\",\n  \"phone\": \"+918617008081\",\n  \"password\": \"Abcd@1234\"\n}",
+      "raw": "{\n  \"name\": \"Rahul Mukharjee\",\n  \"phone\": \"+918617008083\",\n  \"password\": \"Abcd@1234\"\n}",
       "form": []
     },
     "tests": []
@@ -101,16 +105,16 @@
     "colId": "72da743f-0e69-4866-bd34-1cba363db2fe",
     "containerId": "d51c1b96-b4d6-406b-bf7b-dda0d30f19df",
     "name": "Login",
-    "url": "{{URL}}/api/auth/login",
+    "url": "/api/auth/login",
     "method": "POST",
     "sortNum": 70000,
     "created": "2023-05-14T02:38:16.722Z",
-    "modified": "2023-05-21T05:46:16.964Z",
+    "modified": "2023-05-29T04:04:24.241Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"phone\": \"+918617008081\",\n  \"password\": \"Abcd@1234\"\n}",
+      "raw": "{\n  \"phone\": \"+919851305775\",\n  \"password\": \"Abcd@1234\"\n}",
       "form": []
     },
     "auth": {
@@ -157,6 +161,62 @@
     "auth": {
       "type": "bearer",
       "bearer": "{{alt_token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "a1484733-1805-4d85-95a3-72b8992c69d1",
+    "colId": "72da743f-0e69-4866-bd34-1cba363db2fe",
+    "containerId": "d51c1b96-b4d6-406b-bf7b-dda0d30f19df",
+    "name": "Who Am I",
+    "url": "/api/whoami",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-05-29T03:28:56.447Z",
+    "modified": "2023-05-29T04:05:42.346Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "92c65bf5-8c97-4195-b3c3-cda30aba1c80",
+    "colId": "c5c1f295-eebf-4390-8018-bbd9f1cc1e75",
+    "containerId": "7c55d5a7-c446-4c87-aea1-dc86d83469bd",
+    "name": "Signup",
+    "url": "/api/auth/signup",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-05-29T03:36:45.795Z",
+    "modified": "2023-05-29T03:43:25.347Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Sayed Ahmed\",\n  \"phone\": \"+919851305775\",\n  \"password\": \"5775#Cashiou\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b9d1f724-62bd-442e-90c7-85370bef431d",
+    "colId": "c5c1f295-eebf-4390-8018-bbd9f1cc1e75",
+    "containerId": "7c55d5a7-c446-4c87-aea1-dc86d83469bd",
+    "name": "Login",
+    "url": "/api/auth/login",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-05-29T03:44:06.570Z",
+    "modified": "2023-05-29T03:45:12.090Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"phone\": \"+919851305775\",\n  \"password\": \"5775#Cashiou\"\n}",
+      "form": []
     },
     "tests": []
   }

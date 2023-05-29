@@ -162,3 +162,7 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# API Clients - Thunder Client
+thunder-tests
+thunder-tests/*.json
