@@ -1,6 +1,11 @@
 import { ValidationOptions, registerDecorator } from 'class-validator';
-import { isValidObjectId } from 'mongoose';
+import { Types } from 'mongoose';
+import { MongoIdException } from 'src/exceptions';
 
+/**
+ * Validates that a given value is a valid MongoDB ObjectId.
+ * @param validationOptions Options to pass to the validation decorator.
+ */
 export function IsValidMongoId(validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         registerDecorator({
@@ -9,8 +14,18 @@ export function IsValidMongoId(validationOptions?: ValidationOptions) {
             propertyName,
             options: validationOptions,
             validator: {
-                validate(value: any) {
-                    return isValidObjectId(value);
+                /**
+                 * Validates that a given value is a valid MongoDB ObjectId.
+                 * @param value The value to validate.
+                 * @returns True if the value is a valid MongoDB ObjectId, false otherwise.
+                 */
+                validate(value: string) {
+                    console.log(value);
+                    if (!Types.ObjectId.isValid(value)) {
+                        console.log(value);
+                        throw new MongoIdException(value);
+                    }
+                    return true;
                 },
             },
         });
