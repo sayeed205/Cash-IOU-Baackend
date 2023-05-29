@@ -18,6 +18,4 @@ export class LoginDto {
         example: 'Abcd@1234',
     })
     password: string;
-
-    // email?:
 }

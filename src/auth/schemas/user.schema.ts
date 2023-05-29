@@ -74,3 +74,5 @@ UserSchema.methods.comparePassword = async function (
 ): Promise<boolean> {
     return bcrypt.compare(password, this.password);
 };
+
+export interface UserDocument extends User, Document {}
