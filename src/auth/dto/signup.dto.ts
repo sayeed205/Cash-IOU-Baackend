@@ -5,6 +5,7 @@ import {
     IsString,
     IsStrongPassword,
 } from 'class-validator';
+import { Match } from 'src/common/decorators';
 
 export class SignupDto {
     @IsString()
@@ -30,4 +31,13 @@ export class SignupDto {
         example: 'Abcd@1234',
     })
     password: string;
+
+    @IsNotEmpty()
+    @IsStrongPassword()
+    @Match(SignupDto, o => o.password)
+    @ApiProperty({
+        description: 'Confirm password',
+        example: 'Abcd@1234',
+    })
+    confirmPassword: string;
 }

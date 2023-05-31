@@ -166,3 +166,5 @@ lerna-debug.log*
 # API Clients - Thunder Client
 thunder-tests
 thunder-tests/*.json
+thunder-tests/
+/thunder-tests
