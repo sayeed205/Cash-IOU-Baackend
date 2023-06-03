@@ -5,7 +5,7 @@ import {
     IsString,
     IsStrongPassword,
 } from 'class-validator';
-import { Match } from 'src/common/decorators';
+import { Match } from 'src/utilities/decorators';
 
 export class SignupDto {
     @IsString()

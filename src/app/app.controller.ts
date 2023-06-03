@@ -7,7 +7,7 @@ import {
     ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { UserDocument } from 'src/auth/schemas';
-import { GetUser } from 'src/common/decorators';
+import { GetUser } from 'src/utilities/decorators';
 import { AppService } from './app.service';
 
 @Controller()

@@ -19,8 +19,8 @@ import {
 import { Types } from 'mongoose';
 
 import { User } from '../auth/schemas/user.schema';
-import { GetUser } from '../common/decorators';
-import { ValidateMongoId } from '../pipes';
+import { GetUser } from '../utilities/decorators';
+import { ValidateMongoId } from '../utilities/pipes';
 import {
     TransactionQueryDto,
     createTransactionDto,

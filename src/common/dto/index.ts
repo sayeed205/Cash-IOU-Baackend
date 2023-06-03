@@ -1,1 +1,1 @@
-export * from './pagination.dto';
+export * from './paginationRes.dto';

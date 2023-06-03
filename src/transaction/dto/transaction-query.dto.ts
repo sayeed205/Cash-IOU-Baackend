@@ -3,7 +3,7 @@ import { Transform } from 'class-transformer';
 import { IsInt, IsNotEmpty, IsString } from 'class-validator';
 
 import { Types } from 'mongoose';
-import { IsValidMongoId } from 'src/common/decorators';
+import { IsValidMongoId } from 'src/utilities/decorators';
 
 export class TransactionQueryDto {
     @IsNotEmpty()

@@ -1,6 +1,6 @@
 import { ValidationOptions, registerDecorator } from 'class-validator';
 import { Types } from 'mongoose';
-import { MongoIdException } from 'src/exceptions';
+import { MongoIdException } from 'src/utilities/exceptions';
 
 /**
  * Validates that a given value is a valid MongoDB ObjectId.

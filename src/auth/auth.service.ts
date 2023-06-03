@@ -18,9 +18,7 @@ export class AuthService {
         private jwtService: JwtService,
     ) {}
 
-    async signUp(
-        signupInfo: SignupInfo,
-    ): Promise<{ ok: boolean; data: { token: string } }> {
+    async signUp(signupInfo: SignupInfo): Promise<{ token: string }> {
         const { phone, password, name } = signupInfo;
 
         // Check if user with phone number already exists as registered user
@@ -37,7 +35,7 @@ export class AuthService {
             user.signedUpOn = new Date();
             await user.save();
             const token = this.jwtService.sign({ user_id: user._id });
-            return { ok: true, data: { token } };
+            return { token };
         }
 
         // if user not found, create new user
@@ -50,10 +48,7 @@ export class AuthService {
         });
 
         const token = this.jwtService.sign({ user_id: newUser._id });
-        return {
-            ok: true,
-            data: { token },
-        };
+        return { token };
     }
 
     async logIn(loginInfo: LoginInfo) {
@@ -72,8 +67,11 @@ export class AuthService {
         // Send jwt token back to user
         const token = this.jwtService.sign({ user_id: user._id });
         return {
-            ok: true,
-            data: { token },
+            token,
+            name: user.name,
+            phone: user.phone,
+            image: user.avatar,
+            id: user._id,
         };
     }
 }

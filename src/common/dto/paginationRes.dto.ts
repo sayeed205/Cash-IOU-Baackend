@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class PaginationDto<TData> {
+export class PaginationResDto<TData> {
     @ApiProperty({
         description: 'Total number of items found in the collection',
     })

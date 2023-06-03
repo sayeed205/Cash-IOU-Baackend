@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Get,
+    Param,
+    Post,
+    Query,
+    UseGuards,
+} from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import {
     ApiBadRequestResponse,
@@ -8,11 +16,13 @@ import {
     ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { Types } from 'mongoose';
+import { PaginationQueryDto } from 'src/common/dto/paginationQuery.dto';
 
 import { User } from '../auth/schemas/user.schema';
-import { GetUser } from '../common/decorators';
-import { ValidateMongoId } from '../pipes';
+import { ApiPaginatedResponse, GetUser } from '../utilities/decorators';
+import { ValidateMongoId } from '../utilities/pipes';
 import { createTransactionRoomDto } from './dto';
+import { TransactionRoomRes } from './dto/transaction-rooms-res.dto';
 import { TransactionRoomService } from './transaction-room.service';
 
 @Controller('transaction-room')
@@ -42,12 +52,19 @@ export class TransactionRoomController {
     }
 
     @Get('all')
+    @ApiPaginatedResponse(TransactionRoomRes)
+    @ApiUnauthorizedResponse({ description: 'Unauthorized' })
     async getAllTransactionRooms(
         @GetUser()
         user: User,
+        @Query()
+        paginationQuery: PaginationQueryDto,
     ) {
+        console.log('paginationQuery', paginationQuery);
         const _id = user._id;
-        return await this.transactionRoomService.getAllTransactionRooms(_id);
+        return await this.transactionRoomService.getAllTransactionRooms(_id, {
+            ...paginationQuery,
+        });
     }
 
     @Get(':id')

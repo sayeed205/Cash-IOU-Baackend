@@ -12,7 +12,8 @@ class roomDetails {
     @Prop()
     avatar?: string;
 
-    // TODO: Add more fields
+    @Prop({ type: Types.ObjectId, ref: 'Transaction' })
+    lastTransaction?: Types.ObjectId;
 }
 
 @Schema({ timestamps: true })
