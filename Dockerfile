@@ -5,7 +5,7 @@
 # and based on a NodeJS 16 image. The multi-stage mechanism allows to build
 # the application in a "builder" stage and then create a lightweight production
 # image containing the required dependencies and the JS build files.
-# 
+#
 # Dockerfile best practices
 # https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 # Dockerized NodeJS best practices
@@ -38,4 +38,6 @@ COPY --from=builder --chown=node:node /home/node/package*.json ./
 COPY --from=builder --chown=node:node /home/node/node_modules/ ./node_modules/
 COPY --from=builder --chown=node:node /home/node/dist/ ./dist/
 
-CMD ["node", "dist/server.js"]
+EXPOSE 5000/tcp
+
+CMD ["npm", "start"]

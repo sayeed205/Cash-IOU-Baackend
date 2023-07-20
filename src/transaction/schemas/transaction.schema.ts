@@ -29,6 +29,7 @@ export class Transaction {
 
     @Prop()
     date: Date;
+    
     @Prop({ ref: User.name, type: Types.ObjectId })
     addedBy: Types.ObjectId;
 
